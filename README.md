@@ -53,7 +53,6 @@ With an intuitive and user-friendly interface, the platform allows users to regi
   
 
 ## Design
-> 🚧: Keep in mind the Corporate Identity (CI); you shall decide appropriately the color schema, graphics, typography, layout, User Experience (UX), and so on.
 
 ### Wireframe
 > 🚧: It is suggested to start with a wireframe. The wireframe focuses on the website structure (Sitemap planning), sketching the pages using Wireframe components (e.g., header, menu, footer) and UX. You can create a wireframe already with draw.io or similar tools. 
@@ -61,7 +60,14 @@ With an intuitive and user-friendly interface, the platform allows users to regi
 Starting from the home page, we can visit different pages. Available public pages are visible in the menu...
 
 ### Prototype
-> 🚧: A prototype can be designed using placeholder text/figures in Budibase. You don't need to connect the front-end to back-end in the early stages of the project development.
+![1](https://github.com/user-attachments/assets/d69a3781-99c7-4933-9d73-c51020e9b73d)
+![2](https://github.com/user-attachments/assets/159e98e2-2dc3-4f42-9e17-9056fa764502)
+![3](https://github.com/user-attachments/assets/2c9f74aa-7494-4b4d-a369-7bcdccfd25a9)
+![4](https://github.com/user-attachments/assets/946635cc-ab12-4799-9885-b00dad017f3e)
+![5](https://github.com/user-attachments/assets/98eb6a83-68a2-4b82-9158-ddd2ece59e01)
+![6](https://github.com/user-attachments/assets/8178907f-921d-4843-857c-4f463fdc1d97)
+![7](https://github.com/user-attachments/assets/4b62ffed-b549-4a73-97f9-4a93b4dcebc1)
+![9](https://github.com/user-attachments/assets/37bd08ef-8d38-4356-be29-d585ab81012e) 
 
 ### Domain Design
 > 🚧: Provide a picture and describe your domain model; you may use Entity-Relationship Model or UML class diagram. Both can be created in Visual Paradigm - we have an academic license for it.
