@@ -31,6 +31,7 @@ With an intuitive and user-friendly interface, the platform allows users to regi
 5. As an Admin, I want to log in so that I can securely access administrative features.
 6. As an Admin, I want to manage user accounts so that I can enforce fair play and moderation.
 
+
 7. As a User, I want to authenticate myself so that I can track my personal stats and history.
 8. As a User, I want to view the list of upcoming tournaments so that I can find and participate in competitions.
 9. As a User, I want to register for a tournament so that I can compete in chess matches.
