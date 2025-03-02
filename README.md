@@ -23,7 +23,7 @@ The FHNW Chess Club web application is a dedicated platform for chess enthusiast
 With an intuitive and user-friendly interface, the platform allows users to register, manage their profiles, participate in tournaments, track leaderboard rankings, and challenge other players. Whether you're a casual player looking for friendly matches or a serious competitor aiming for the top of the leaderboard, this app offers all the necessary features to enhance your chess skills.
  
 
-### User Stories
+## User Stories
 1. As an Admin, I want a web app that works on both mobile devices and desktop computers so that I can manage the chess platform from any device.
 2. As an Admin, I want a visually consistent interface so that I can navigate and manage the system efficiently.
 3. As an Admin, I want to use list views to explore and manage users, tournaments, and leaderboard rankings.
@@ -31,7 +31,7 @@ With an intuitive and user-friendly interface, the platform allows users to regi
 5. As an Admin, I want to log in so that I can securely access administrative features.
 6. As an Admin, I want to manage user accounts so that I can enforce fair play and moderation.
 
-
+#
 7. As a User, I want to authenticate myself so that I can track my personal stats and history.
 8. As a User, I want to view the list of upcoming tournaments so that I can find and participate in competitions.
 9. As a User, I want to register for a tournament so that I can compete in chess matches.
