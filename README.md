@@ -60,21 +60,19 @@ With an intuitive and user-friendly interface, the platform allows users to regi
 Starting from the home page, we can visit different pages. Available public pages are visible in the menu...
 
 ### Prototype
-![1](https://github.com/user-attachments/assets/d69a3781-99c7-4933-9d73-c51020e9b73d)
+![1](https://github.com/user-attachments/assets/b37bd075-5466-42b1-92b7-e4619d0cd4dd)
 
-![2](https://github.com/user-attachments/assets/159e98e2-2dc3-4f42-9e17-9056fa764502)
+![2](https://github.com/user-attachments/assets/0262f6c2-2b00-437e-a3c0-1e0d47bc942b)
 
-![3](https://github.com/user-attachments/assets/2c9f74aa-7494-4b4d-a369-7bcdccfd25a9)
+![3](https://github.com/user-attachments/assets/2726db40-5f2f-4a06-861c-1667c859f47e)
 
-![4](https://github.com/user-attachments/assets/946635cc-ab12-4799-9885-b00dad017f3e)
+![4](https://github.com/user-attachments/assets/ee8ab9b1-6bd1-49fd-b3d2-35e9948ff1d6)
 
-![5](https://github.com/user-attachments/assets/98eb6a83-68a2-4b82-9158-ddd2ece59e01)
+![5](https://github.com/user-attachments/assets/c66682e3-5ae6-4326-8ab1-8d7094e0d354)
 
-![6](https://github.com/user-attachments/assets/8178907f-921d-4843-857c-4f463fdc1d97)
+![6](https://github.com/user-attachments/assets/bb959b5c-73eb-4998-bcac-bc544a000f06)
 
-![7](https://github.com/user-attachments/assets/4b62ffed-b549-4a73-97f9-4a93b4dcebc1)
-
-![9](https://github.com/user-attachments/assets/37bd08ef-8d38-4356-be29-d585ab81012e) 
+![7](https://github.com/user-attachments/assets/ab871b53-695b-463f-a7f7-29f15b3c4eb7)
 
 ### Domain Design
 > 🚧: Provide a picture and describe your domain model; you may use Entity-Relationship Model or UML class diagram. Both can be created in Visual Paradigm - we have an academic license for it.
