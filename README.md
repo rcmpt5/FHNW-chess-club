@@ -17,7 +17,7 @@
   - [Milestones](#milestones)
 
 
-### Scenario
+## Scenario
 The FHNW Chess Club web application is a dedicated platform for chess enthusiasts within the FHNW community. It is designed to connect students and faculty members who share a passion for chess, providing a structured and competitive environment to practice, compete, and track their progress.
 With an intuitive and user-friendly interface, the platform allows users to register, manage their profiles, participate in tournaments, track leaderboard rankings, and challenge other players. Whether you're a casual player looking for friendly matches or a serious competitor aiming for the top of the leaderboard, this app offers all the necessary features to enhance your chess skills.
  
@@ -38,7 +38,7 @@ With an intuitive and user-friendly interface, the platform allows users to regi
 12. As a User, I want to view the leaderboard so that I can compare my ranking with other players.
 
 
-### Use Case
+## Use Case
 - UC-1 [View All Tournaments]: Admin and users can retrieve a list of all available tournaments.
 - UC-2 [View Tournament Details]: Admin or users can retrieve information about a specific tournament (e.g., participants, rules, schedule).
 - UC-3 [Manage Tournaments]: Admin can create, update, and delete tournaments.
