@@ -17,7 +17,7 @@
   - [Milestones](#milestones)
 
 
-##Analysis
+## Analysis
 
 ### Scenario
 The FHNW Chess Club web application is a dedicated platform for chess enthusiasts within the FHNW community. It is designed to connect students and faculty members who share a passion for chess, providing a structured and competitive environment to practice, compete, and track their progress.
