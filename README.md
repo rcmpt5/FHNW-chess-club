@@ -69,10 +69,8 @@ By the beginning of the project, we already had the idea and the prototype, so w
 ![7](https://github.com/user-attachments/assets/ab871b53-695b-463f-a7f7-29f15b3c4eb7)
 
 ### Domain Design
-> 🚧: Provide a picture and describe your domain model; you may use Entity-Relationship Model or UML class diagram. Both can be created in Visual Paradigm - we have an academic license for it.
+UML class diagram
+![UML Class Diagram Connections](https://github.com/user-attachments/assets/69a9b1f6-67a8-4cb9-90ee-d60382f0cb0a)
 
-The `ch.fhnw.pizza.data.domain` package contains the following domain objects / entities including getters and setters:
-
-![](images/domain-model.png)
 
 
