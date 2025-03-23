@@ -27,25 +27,25 @@ With an intuitive and user-friendly interface, the platform allows users to regi
 1. As an Admin, I want a web app that works on both mobile devices and desktop computers so that I can manage the chess platform from any device.
 2. As an Admin, I want a visually consistent interface so that I can navigate and manage the system efficiently.
 3. As an Admin, I want to use list views to explore and manage users, tournaments, and leaderboard rankings.
-4. As an Admin, I want to create, update, and delete tournament data so that I can manage chess competitions.
+4. As an Admin, I want to create, update, and delete tournament data so that I can manage chess competitions. ++++
 5. As an Admin, I want to log in so that I can securely access administrative features.
-6. As an Admin, I want to manage user accounts so that I can enforce fair play and moderation.
+6. As an Admin, I want to manage user accounts so that I can enforce fair play and moderation. ++++
 #
 7. As a User, I want to authenticate myself so that I can track my personal stats and history.
-8. As a User, I want to view the list of upcoming tournaments so that I can find and participate in competitions.
-9. As a User, I want to register for a tournament so that I can compete in chess matches.
-10. As a User, I want to see my tournament history and match results so that I can track my performance.
-11. As a User, I want to challenge another player to a chess match so that I can improve my ranking.
-12. As a User, I want to view the leaderboard so that I can compare my ranking with other players.
+8. As a User, I want to view the list of upcoming tournaments so that I can find and participate in competitions. ++++
+9. As a User, I want to register for a tournament so that I can compete in chess matches. ++++
+10. As a User, I want to see my tournament history and match results so that I can track my performance. ++++
+11. As a User, I want to challenge another player to a chess match so that I can improve my ranking. ++++
+12. As a User, I want to view the leaderboard so that I can compare my ranking with other players. ++++
 
 ### Use Case
 - UC-1 [View All Tournaments]: Admin and users can retrieve a list of all available tournaments.
 - UC-2 [View Tournament Details]: Admin or users can retrieve information about a specific tournament (e.g., participants, rules, schedule).
-- UC-3 [Manage Tournaments]: Admin can create, update, and delete tournaments.
-- UC-4 [View Leaderboard]: Users can view ranking and player performance statistics.
+- UC-3 [Manage Tournaments]: Admin can create, update, and delete tournaments. 
+- UC-4 [View Leaderboard]: Users can view ranking and player performance statistics. ++++
 - UC-5 [Log in]: Admin and registered users can authenticate to access personalized features.
-- UC-6 [Enroll in a Tournament]: Users can register for a chess tournament.
-- UC-7 [Challenge a Player]: Users can send and accept match invitations.
+- UC-6 [Enroll in a Tournament]: Users can register for a chess tournament. ++++
+- UC-7 [Challenge a Player]: Users can send and accept match invitations. ++++
   
 
 ## Design
