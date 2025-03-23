@@ -70,7 +70,9 @@ By the beginning of the project, we already had the idea and the prototype, so w
 
 ### Domain Design
 UML class diagram
-![UML Class Diagram Connections](https://github.com/user-attachments/assets/69a9b1f6-67a8-4cb9-90ee-d60382f0cb0a)
+![UML class Diagram  ](https://github.com/user-attachments/assets/199d45a8-7186-42a8-a33b-599ff2c1353b)
+
+
 
 
 
