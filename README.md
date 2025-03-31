@@ -73,7 +73,7 @@ UML class diagram
 
 ![UML   ](https://github.com/user-attachments/assets/8865cbd7-e5f3-41d0-875e-12799ea353fd)
 
-CLASSES
+### CLASSES
 1 User (player/admin). Admin inherits attributes from User but has Admin-specific methods that the Player doesn't have.
 2 Profile (user profile)
 3 Enrollment (enrollment into a tournament)
@@ -82,13 +82,13 @@ CLASSES
 6 Match (a play between 2 users)
 7 Tournament (chess tournament)
 
-CARDINALITY
+### CARDINALITY
 One user can have one profile.
 One user can enroll into multiple matches.
 One user can participate send/receive multiple challenges.
 One tournament can contain multiple enrollments and matches.
 
-RELATIONSHIPS
+### RELATIONSHIPS
 Admin is a subclass of User and inherits attributes from User. However, it also has it's own methods.
 If the user is deleted, the profile is deleted too, therefore relationship between user and profile is composition.
 The same goes to tournament and enrollments where one doesn't make sense (wouldn't exist) without the other.
