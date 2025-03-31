@@ -73,26 +73,26 @@ UML class diagram
 
 ![UML   ](https://github.com/user-attachments/assets/8865cbd7-e5f3-41d0-875e-12799ea353fd)
 
-#### CLASSES
-1 User (player/admin). Admin inherits attributes from User but has Admin-specific methods that the Player doesn't have.
-2 Profile (user profile)
-3 Enrollment (enrollment into a tournament)
-4 Challenge (challenging another player to a chess match)
-5 Leaderboard (of the tournament)
-6 Match (a play between 2 users)
-7 Tournament (chess tournament)
+CLASSES <br>
+1 User (player/admin). Admin inherits attributes from User but has Admin-specific methods that the Player doesn't have. <br>
+2 Profile (user profile) <br>
+3 Enrollment (enrollment into a tournament) <br>
+4 Challenge (challenging another player to a chess match) <br>
+5 Leaderboard (of the tournament) <br>
+6 Match (a play between 2 users) <br>
+7 Tournament (chess tournament) <br>
 
-## CARDINALITY
-One user can have one profile.
-One user can enroll into multiple matches.
-One user can participate send/receive multiple challenges.
-One tournament can contain multiple enrollments and matches.
+CARDINALITY <br>
+One user can have one profile. <br>
+One user can enroll into multiple matches. <br>
+One user can participate send/receive multiple challenges. <br>
+One tournament can contain multiple enrollments and matches. <br>
 
-# RELATIONSHIPS
-Admin is a subclass of User and inherits attributes from User. However, it also has it's own methods.
-If the user is deleted, the profile is deleted too, therefore relationship between user and profile is composition.
-The same goes to tournament and enrollments where one doesn't make sense (wouldn't exist) without the other.
-Other relations: association (a structural connection).
+RELATIONSHIPS <br>
+Admin is a subclass of User and inherits attributes from User. However, it also has it's own methods. <br>
+If the user is deleted, the profile is deleted too, therefore relationship between user and profile is composition. <br>
+The same goes to tournament and enrollments where one doesn't make sense (wouldn't exist) without the other. <br>
+Other relations: association (a structural connection). <br>
 
 
 
