@@ -82,13 +82,13 @@ UML class diagram
 6 Match (a play between 2 users)
 7 Tournament (chess tournament)
 
-### CARDINALITY
+## CARDINALITY
 One user can have one profile.
 One user can enroll into multiple matches.
 One user can participate send/receive multiple challenges.
 One tournament can contain multiple enrollments and matches.
 
-### RELATIONSHIPS
+# RELATIONSHIPS
 Admin is a subclass of User and inherits attributes from User. However, it also has it's own methods.
 If the user is deleted, the profile is deleted too, therefore relationship between user and profile is composition.
 The same goes to tournament and enrollments where one doesn't make sense (wouldn't exist) without the other.
