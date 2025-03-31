@@ -89,7 +89,7 @@ One user can participate send/receive multiple challenges. <br>
 One tournament can contain multiple enrollments and matches. <br>
 
 RELATIONSHIPS <br>
-Admin is a subclass of User and inherits attributes from User. However, it also has it's own methods. <br>
+Admin is a subclass of User and inherits attributes from User. However, it also has its own methods. <br>
 If the user is deleted, the profile is deleted too, therefore relationship between user and profile is composition. <br>
 The same goes to tournament and enrollments where one doesn't make sense (wouldn't exist) without the other. <br>
 Other relations: association (a structural connection). <br>
