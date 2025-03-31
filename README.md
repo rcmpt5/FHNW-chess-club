@@ -70,7 +70,32 @@ By the beginning of the project, we already had the idea and the prototype, so w
 
 ### Domain Design
 UML class diagram
-![UML class Diagram  ](https://github.com/user-attachments/assets/199d45a8-7186-42a8-a33b-599ff2c1353b)
+
+![UML   ](https://github.com/user-attachments/assets/8865cbd7-e5f3-41d0-875e-12799ea353fd)
+
+CLASSES
+1 User (player/admin). Admin inherits attributes from User but has Admin-specific methods that the Player doesn't have.
+2 Profile (user profile)
+3 Enrollment (enrollment into a tournament)
+4 Challenge (challenging another player to a chess match)
+5 Leaderboard (of the tournament)
+6 Match (a play between 2 users)
+7 Tournament (chess tournament)
+
+CARDINALITY
+One user can have one profile.
+One user can enroll into multiple matches.
+One user can participate send/receive multiple challenges.
+One tournament can contain multiple enrollments and matches.
+
+RELATIONSHIPS
+Admin is a subclass of User and inherits attributes from User. However, it also has it's own methods.
+If the user is deleted, the profile is deleted too, therefore relationship between user and profile is composition.
+The same goes to tournament and enrollments where one doesn't make sense (wouldn't exist) without the other.
+Other relations: association (a structural connection).
+
+
+
 
 
 
