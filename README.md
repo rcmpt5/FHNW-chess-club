@@ -71,7 +71,7 @@ By the beginning of the project, we already had the idea and the prototype, so w
 ### Domain Design
 UML class diagram
 
-![UML   ](https://github.com/user-attachments/assets/8865cbd7-e5f3-41d0-875e-12799ea353fd)
+![UML   ](https://github.com/user-attachments/assets/2aebdcd1-5db6-4793-80bf-7217504e1e4c)
 
 CLASSES <br>
 1 User (player/admin). Admin inherits attributes from User but has Admin-specific methods that the Player doesn't have. <br>
