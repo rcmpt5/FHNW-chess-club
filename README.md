@@ -73,7 +73,7 @@ UML class diagram
 
 ![UML   ](https://github.com/user-attachments/assets/8865cbd7-e5f3-41d0-875e-12799ea353fd)
 
-### CLASSES
+#### CLASSES
 1 User (player/admin). Admin inherits attributes from User but has Admin-specific methods that the Player doesn't have.
 2 Profile (user profile)
 3 Enrollment (enrollment into a tournament)
