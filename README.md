@@ -104,7 +104,25 @@ If the User is deleted, the Profile is deleted too, therefore relationship betwe
 The same goes to Tournament and Enrollments where one doesn't make sense (wouldn't exist) without the other. <br>
 Other relations: association (a structural connection). <br>
 
+### Business Logic
+UC-4 [View Leaderboard]: Users can view ranking and player performance statistics. <br>
 
+Based on UC-4, the system returns a filtered leaderboard view depending on the selected category: <br>
+
+If the category is "weekly", return players sorted by points earned this week. <br>
+
+If the category is "monthly", return players sorted by points earned this month. <br>
+
+If no category is provided, return the overall leaderboard (total points). <br>
+
+Path: [/api/leaderboard?category=weekly] <br>
+Param: category  <br>
+Admitted values: "weekly", "monthly"  <br>
+Default: overall <br>
+Method: GET <br>
+
+
+## Implementation
 
 
 
