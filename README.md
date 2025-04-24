@@ -39,6 +39,8 @@ With an intuitive and user-friendly interface, the platform allows users to regi
 12. As a User, I want to view the leaderboard so that I can compare my ranking with other players. ++++
 
 ### Use Case
+![UC Diagram](https://github.com/user-attachments/assets/bad73462-5870-43f8-8364-d0504bdfd1ea)
+
 - UC-1 [View All Tournaments]: Admin and users can retrieve a list of all available tournaments.
 - UC-2 [View Tournament Details]: Admin and users can retrieve information about a specific tournament (e.g., participants, rules, schedule).
 - UC-3 [Manage Tournaments]: Admin can create, update, and delete tournaments. 
