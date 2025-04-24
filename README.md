@@ -53,7 +53,7 @@ With an intuitive and user-friendly interface, the platform allows users to regi
 UC Challenge a player, Enroll in a tournament, Manage tournaments extend Log in because these actions are not possible without logging in first.<br>
 It is possible to view the tournaments and their details as well as leaderboard without logging in first (public UC). <br>
 View tournament details includes See all tournaments and Enroll in a tournament includes View tournament details because one action calls another. F.e. to enroll in a tournament one needs to see that tournament's details. <br>
-#
+
 User-specific UC: Enroll in a tournament; Challenge a player. <br>
 Admin-specific UC: Manage tournaments.
 
