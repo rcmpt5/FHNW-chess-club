@@ -40,7 +40,7 @@ With an intuitive and user-friendly interface, the platform allows users to regi
 
 ### Use Case
 - UC-1 [View All Tournaments]: Admin and users can retrieve a list of all available tournaments.
-- UC-2 [View Tournament Details]: Admin or users can retrieve information about a specific tournament (e.g., participants, rules, schedule).
+- UC-2 [View Tournament Details]: Admin and users can retrieve information about a specific tournament (e.g., participants, rules, schedule).
 - UC-3 [Manage Tournaments]: Admin can create, update, and delete tournaments. 
 - UC-4 [View Leaderboard]: Users can view ranking and player performance statistics. ++++
 - UC-5 [Log in]: Admin and registered users can authenticate to access personalized features.
@@ -90,8 +90,8 @@ One tournament can contain multiple enrollments and matches. <br>
 
 RELATIONSHIPS <br>
 Admin is a subclass of User and inherits attributes from User. However, it also has its own methods. <br>
-If the user is deleted, the profile is deleted too, therefore relationship between user and profile is composition. <br>
-The same goes to tournament and enrollments where one doesn't make sense (wouldn't exist) without the other. <br>
+If the User is deleted, the Profile is deleted too, therefore relationship between User and Profile is composition. <br>
+The same goes to Tournament and Enrollments where one doesn't make sense (wouldn't exist) without the other. <br>
 Other relations: association (a structural connection). <br>
 
 
