@@ -48,7 +48,14 @@ With an intuitive and user-friendly interface, the platform allows users to regi
 - UC-5 [Log in]: Admin and registered users can authenticate to access personalized features.
 - UC-6 [Enroll in a Tournament]: Users can register for a chess tournament. ++++
 - UC-7 [Challenge a Player]: Users can send and accept match invitations. ++++
-  
+
+### Use Case Diagram Logic
+UC Challenge a player, Enroll in a tournament, Manage tournaments extend Log in because these actions are not possible without logging in first.<br>
+It is possible to view the tournaments and their details as well as leaderboard without logging in first (public UC). <br>
+View tournament details includes See all tournaments and Enroll in a tournament includes View tournament details because one action calls another. F.e. to enroll in a tournament one needs to see that tournament's details. <br>
+User-specific UC: Enroll in a tournament; Challenge a player. <br>
+Admin-specific UC: Manage tournaments.
+
 
 ## Design
 
