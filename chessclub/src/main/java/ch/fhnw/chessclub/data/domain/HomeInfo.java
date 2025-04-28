@@ -17,12 +17,19 @@ public class HomeInfo {
     private String title;
     private String description;
     private String version;
+    private Object additionalInfo; // Assuming this is optional
 
     @ManyToOne
     @JoinColumn(name = "related_entity_id") // Foreign Key
     private RelatedEntity relatedEntity; // Replace 'RelatedEntity' with the actual related entity
 
     public HomeInfo() {}
+
+    public HomeInfo(String title, String description, String version) {
+        this.title = title;
+        this.description = description;
+        this.version = version;
+    }
 
     public HomeInfo(String title, String description, String version, RelatedEntity relatedEntity) {
         this.title = title;
@@ -62,6 +69,14 @@ public class HomeInfo {
 
     public void setVersion(String version) {
         this.version = version;
+    }
+
+    public Object getAdditionalInfo() {
+        return additionalInfo;
+    }
+
+    public void setAdditionalInfo(Object additionalInfo) {
+        this.additionalInfo = additionalInfo;
     }
 
     public RelatedEntity getRelatedEntity() {
