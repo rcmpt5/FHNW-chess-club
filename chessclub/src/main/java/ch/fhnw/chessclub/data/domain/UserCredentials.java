@@ -4,7 +4,7 @@ public class UserCredentials {
     private String username;
     private String password;
 
-    // Getters and setters
+    // Getter und Setter
     public String getUsername() {
         return username;
     }
