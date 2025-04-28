@@ -13,7 +13,7 @@
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
-    <version>2.7.14</version>
+    <version>3.2.0</version>
     <relativePath/> <!-- look up parent from repository -->
   </parent>
 
@@ -23,10 +23,7 @@
 
   <dependencies>
 
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-actuator</artifactId>
-    </dependency>
+    <!-- Removed duplicate spring-boot-starter-actuator dependency -->
 
     <!-- Spring Web -->
     <dependency>
@@ -72,7 +69,6 @@
     <dependency>
         <groupId>jakarta.persistence</groupId>
         <artifactId>jakarta.persistence-api</artifactId>
-        <version>3.1.0</version>
     </dependency>
   </dependencies>
 
