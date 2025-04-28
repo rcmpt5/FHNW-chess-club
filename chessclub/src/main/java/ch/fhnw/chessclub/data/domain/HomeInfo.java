@@ -21,7 +21,7 @@ public class HomeInfo {
 
     @ManyToOne
     @JoinColumn(name = "related_entity_id") // Foreign Key
-    private RelatedEntity relatedEntity; // Replace 'RelatedEntity' with the actual related entity
+    private RelatedEntity relatedEntity;
 
     public HomeInfo() {}
 
@@ -85,5 +85,37 @@ public class HomeInfo {
 
     public void setRelatedEntity(RelatedEntity relatedEntity) {
         this.relatedEntity = relatedEntity;
+    }
+}
+
+@Entity
+public class RelatedEntity {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private String name;
+
+    public RelatedEntity() {}
+
+    public RelatedEntity(String name) {
+        this.name = name;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }
