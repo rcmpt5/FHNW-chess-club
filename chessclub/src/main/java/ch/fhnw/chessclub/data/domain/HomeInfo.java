@@ -38,3 +38,4 @@ public class HomeInfo {
         this.version = version;
     }
 }
+
