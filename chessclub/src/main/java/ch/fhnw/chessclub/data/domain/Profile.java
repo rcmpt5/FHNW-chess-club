@@ -1,10 +1,28 @@
 package ch.fhnw.chessclub.data.domain;
 
+import jakarta.persistence.*;
+import java.util.List;
+
+@Entity
+@Table(name = "profiles")
 public class Profile {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(nullable = false, unique = true)
     private String username;
+
+    @Column(name = "full_name", nullable = false)
     private String fullName;
+
+    @Column(nullable = false)
     private int rating;
+
+    // Assuming a one-to-many relationship with LeaderboardEntry
+    @OneToMany(mappedBy = "player", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<LeaderboardEntry> leaderboardEntries;
 
     // Getters & Setters
     public Long getId() { return id; }
@@ -18,4 +36,9 @@ public class Profile {
 
     public int getRating() { return rating; }
     public void setRating(int rating) { this.rating = rating; }
+
+    public List<LeaderboardEntry> getLeaderboardEntries() { return leaderboardEntries; }
+    public void setLeaderboardEntries(List<LeaderboardEntry> leaderboardEntries) {
+        this.leaderboardEntries = leaderboardEntries;
+    }
 }
