@@ -17,7 +17,9 @@ import org.springframework.security.oauth2.jwt.NimbusJwtEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.config.annotation.web.configurers.oauth2.server.resource.OAuth2ResourceServerConfigurer;
 import org.springframework.security.config.annotation.web.configurers.SessionManagementConfigurer;
+import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.oauth2.jwt.JwtClaimsSet;
+import org.springframework.security.oauth2.jose.jws.MacAlgorithm;
 import org.springframework.security.oauth2.jwt.JwsHeader;
 import org.springframework.security.oauth2.jwt.JwtEncoderParameters;
 
@@ -52,18 +54,20 @@ public class SecurityConfig {
                 .csrf(csrf -> csrf.disable()) // Disable CSRF for REST APIs
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/securitytest/token").hasRole("USER") // Only USER role can request a token
-                        .anyRequest().hasAuthority("SCOPE_READ") // Only requests with SCOPE_READ can access other endpoints
-                )
-                .sessionManagement(session -> session.sessionCreationPolicy(SessionManagementConfigurer.SessionCreationPolicy.STATELESS)) // Stateless session
+                        .anyRequest().hasAuthority("SCOPE_READ")) // Only requests with SCOPE_READ can access other endpoints
+                .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)) // Stateless session
                 .oauth2ResourceServer(OAuth2ResourceServerConfigurer::jwt) // Enable JWT-based authentication
-                .httpBasic(withDefaults()) // Enable HTTP Basic Authentication
-                .build();
+                        .httpBasic(withDefaults()) // Enable HTTP Basic Authentication
+                    .build(); // Add missing closing parenthesis for the method chain
     }
 
     // Define a JWT Encoder
     @Bean
     JwtEncoder jwtEncoder() {
-        return new NimbusJwtEncoder(new ImmutableSecret<>(jwtKey.getBytes()));
+        SecretKeySpec secretKey = new SecretKeySpec(jwtKey.getBytes(), "HmacSHA256");
+        JWK jwk = new OctetSequenceKey.Builder(secretKey).build();
+        JWKSource<SecurityContext> jwkSource = new ImmutableJWKSet<>(new JWKSet(jwk));
+        return new NimbusJwtEncoder(jwkSource);
     }
 
     // Define a JWT Decoder
