@@ -9,23 +9,21 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
+
+import com.nimbusds.jose.jwk.JWK;
+import com.nimbusds.jose.jwk.OctetSequenceKey;
+import com.nimbusds.jose.jwk.source.ImmutableJWKSet;
+import com.nimbusds.jose.jwk.JWKSet;
+import com.nimbusds.jose.jwk.source.JWKSource;
+
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.oauth2.jwt.JwtDecoder;
 import org.springframework.security.oauth2.jwt.JwtEncoder;
 import org.springframework.security.oauth2.jwt.NimbusJwtDecoder;
 import org.springframework.security.oauth2.jwt.NimbusJwtEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.config.annotation.web.configurers.oauth2.server.resource.OAuth2ResourceServerConfigurer;
-import org.springframework.security.config.annotation.web.configurers.SessionManagementConfigurer;
 import org.springframework.security.config.http.SessionCreationPolicy;
-import org.springframework.security.oauth2.jwt.JwtClaimsSet;
 import org.springframework.security.oauth2.jose.jws.MacAlgorithm;
-import org.springframework.security.oauth2.jwt.JwsHeader;
-import org.springframework.security.oauth2.jwt.JwtEncoderParameters;
-
 import javax.crypto.spec.SecretKeySpec;
-import java.time.Instant;
-
 import static org.springframework.security.config.Customizer.withDefaults;
 
 @Configuration
@@ -56,7 +54,7 @@ public class SecurityConfig {
                         .requestMatchers("/securitytest/token").hasRole("USER") // Only USER role can request a token
                         .anyRequest().hasAuthority("SCOPE_READ")) // Only requests with SCOPE_READ can access other endpoints
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)) // Stateless session
-                .oauth2ResourceServer(OAuth2ResourceServerConfigurer::jwt) // Enable JWT-based authentication
+                .oauth2ResourceServer(oauth2 -> oauth2.jwt(withDefaults())) // Enable JWT-based authentication
                         .httpBasic(withDefaults()) // Enable HTTP Basic Authentication
                     .build(); // Add missing closing parenthesis for the method chain
     }
@@ -66,7 +64,7 @@ public class SecurityConfig {
     JwtEncoder jwtEncoder() {
         SecretKeySpec secretKey = new SecretKeySpec(jwtKey.getBytes(), "HmacSHA256");
         JWK jwk = new OctetSequenceKey.Builder(secretKey).build();
-        JWKSource<SecurityContext> jwkSource = new ImmutableJWKSet<>(new JWKSet(jwk));
+        JWKSource<com.nimbusds.jose.proc.SecurityContext> jwkSource = new ImmutableJWKSet<>(new JWKSet(jwk));
         return new NimbusJwtEncoder(jwkSource);
     }
 
