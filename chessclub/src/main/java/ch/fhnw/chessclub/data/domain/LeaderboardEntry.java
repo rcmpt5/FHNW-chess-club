@@ -1,7 +1,6 @@
 package ch.fhnw.chessclub.data.domain;
 
 import jakarta.persistence.*;
-import ch.fhnw.chessclub.data.domain.Tournament;
 
 @Entity
 @Table(name = "leaderboard_entries")
