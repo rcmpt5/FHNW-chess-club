@@ -20,10 +20,6 @@ public class Profile {
     @Column(nullable = false)
     private int rating;
 
-    // Assuming a one-to-many relationship with LeaderboardEntry
-    @OneToMany(mappedBy = "player", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<LeaderboardEntry> leaderboardEntries;
-
     // Getters & Setters
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
@@ -37,8 +33,4 @@ public class Profile {
     public int getRating() { return rating; }
     public void setRating(int rating) { this.rating = rating; }
 
-    public List<LeaderboardEntry> getLeaderboardEntries() { return leaderboardEntries; }
-    public void setLeaderboardEntries(List<LeaderboardEntry> leaderboardEntries) {
-        this.leaderboardEntries = leaderboardEntries;
-    }
 }

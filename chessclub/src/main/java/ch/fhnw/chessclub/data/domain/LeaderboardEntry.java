@@ -1,6 +1,7 @@
 package ch.fhnw.chessclub.data.domain;
 
 import jakarta.persistence.*;
+import ch.fhnw.chessclub.data.domain.Tournament;
 
 @Entity
 @Table(name = "leaderboard_entries")
@@ -19,10 +20,10 @@ public class LeaderboardEntry {
     @Column(nullable = false)
     private int wins;
 
-    // Assuming a foreign key relationship with a Player entity
+    // point at Profile, not Player
     @ManyToOne
-    @JoinColumn(name = "player_id", nullable = false)
-    private Player player;
+@JoinColumn(name = "player_id", nullable = false)
+private Player player;
 
     // Getters & Setters
     public Long getId() { return id; }
@@ -39,4 +40,13 @@ public class LeaderboardEntry {
 
     public Player getPlayer() { return player; }
     public void setPlayer(Player player) { this.player = player; }
+
+    @ManyToOne
+@JoinColumn(name = "tournament_id", nullable = false) // or nullable = true if optional
+private Tournament tournament;
+
+    public Tournament getTournament() { return tournament; }
+    public void setTournament(Tournament tournament) { this.tournament = tournament; }
 }
+
+

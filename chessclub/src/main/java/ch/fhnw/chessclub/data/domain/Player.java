@@ -21,7 +21,9 @@ public class Player {
     private int rating;
 
     // Assuming a one-to-many relationship with LeaderboardEntry
-    @OneToMany(mappedBy = "player", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "player",
+             cascade = CascadeType.ALL,
+             orphanRemoval = true)
     private List<LeaderboardEntry> leaderboardEntries;
 
     // Getters & Setters
