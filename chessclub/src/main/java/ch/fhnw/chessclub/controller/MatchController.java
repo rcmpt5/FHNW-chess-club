@@ -15,21 +15,35 @@ public class MatchController {
     @Autowired
     private MatchService matchService;
 
+    // CREATE
+    @PostMapping
+    public ResponseEntity<Match> addMatch(@RequestBody Match match) {
+        Match created = matchService.addMatch(match);
+        return ResponseEntity.ok(created);
+    }
+
+    // READ ALL
     @GetMapping
     public List<Match> getAllMatches() {
         return matchService.getAllMatches();
     }
 
-    @PostMapping
-    public ResponseEntity<Match> createMatch(@RequestBody Match match) {
-        return ResponseEntity.ok(matchService.addMatch(match));
+    // READ BY ID
+    @GetMapping("/{id}")
+    public ResponseEntity<Match> getMatchById(@PathVariable Long id) {
+        return matchService.getMatchById(id)
+                .map(ResponseEntity::ok)
+                .orElse(ResponseEntity.notFound().build());
     }
 
+    // UPDATE
     @PutMapping("/{id}")
     public ResponseEntity<Match> updateMatch(@PathVariable Long id, @RequestBody Match match) {
-        return ResponseEntity.ok(matchService.updateMatch(id, match));
+        Match updated = matchService.updateMatch(id, match);
+        return updated != null ? ResponseEntity.ok(updated) : ResponseEntity.notFound().build();
     }
 
+    // DELETE
     @DeleteMapping("/{id}")
     public ResponseEntity<String> deleteMatch(@PathVariable Long id) {
         matchService.deleteMatch(id);
