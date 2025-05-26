@@ -20,6 +20,7 @@ public class Player {
     @Column(nullable = false)
     private int rating;
 
+    // JSON ignore maybe needed
     // Assuming a one-to-many relationship with LeaderboardEntry
     @OneToMany(mappedBy = "player",
              cascade = CascadeType.ALL,

@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-FhnwChessClubApplication<chessclub>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "ch.fhnw.chessclub.FhnwChessClubApplication",
+            "projectName": "chessclub",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
