@@ -2,7 +2,9 @@ package ch.fhnw.chessclub.controller;
 
 import ch.fhnw.chessclub.business.service.PlayerService;
 import ch.fhnw.chessclub.data.domain.Player;
+import ch.fhnw.chessclub.data.domain.dto.CreatePlayerRequest;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,40 +18,63 @@ public class PlayerController {
     private PlayerService playerService;
 
     // CREATE
-    @PostMapping
-    public ResponseEntity<Player> addPlayer(@RequestBody Player player) {
-        Player created = playerService.addPlayer(player);
-        return ResponseEntity.ok(created);
+    @PostMapping(consumes = "application/json", produces = "application/json")
+    public ResponseEntity<?> addPlayer(@RequestBody CreatePlayerRequest request) {
+        try {
+            Player player = new Player();
+            player.setUsername(request.getUsername());
+            player.setFullName(request.getFullName());
+            player.setRating(request.getRating());
+            Player created = playerService.addPlayer(player);
+            return ResponseEntity.ok(created);
+        } catch (Exception ex) {
+            return ResponseEntity.status(HttpStatus.CONFLICT).body("Player already exists with given username");
+        }
     }
 
     // READ ALL
-    @GetMapping
+    @GetMapping(produces = "application/json")
     public List<Player> getAllPlayers() {
         return playerService.getAllPlayers();
     }
 
     // READ BY USERNAME
-    @GetMapping("/by-username/{username}")
-    public ResponseEntity<Player> getPlayerByUsername(@PathVariable String username) {
-        Player player = playerService.getPlayerByUsername(username);
-        return player != null ? ResponseEntity.ok(player) : ResponseEntity.notFound().build();
+    @GetMapping(path = "/by-username/{username}", produces = "application/json")
+    public ResponseEntity<?> getPlayerByUsername(@PathVariable String username) {
+        try {
+            Player player = playerService.getPlayerByUsername(username);
+            return ResponseEntity.ok(player);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("No player found with given username");
+        }
     }
 
     // UPDATE
-    @PutMapping("/{id}")
-    public ResponseEntity<Player> updatePlayer(@PathVariable Long id, @RequestBody Player updatedPlayer) {
-        Player updated = playerService.updatePlayer(id, updatedPlayer);
-        return updated != null ? ResponseEntity.ok(updated) : ResponseEntity.notFound().build();
+    @PutMapping(path = "/{id}", consumes = "application/json", produces = "application/json")
+    public ResponseEntity<?> updatePlayer(@PathVariable Long id, @RequestBody CreatePlayerRequest request) {
+        try {
+            Player player = playerService.getPlayerById(id);
+            if (player == null) {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND).body("No player found with given id");
+            }
+            player.setUsername(request.getUsername());
+            player.setFullName(request.getFullName());
+            player.setRating(request.getRating());
+            Player updated = playerService.savePlayer(player);
+            return ResponseEntity.ok(updated);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.CONFLICT).body("Could not update player");
+        }
     }
 
     // DELETE
-    @DeleteMapping("/by-username/{username}")
-    public ResponseEntity<String> deletePlayer(@PathVariable String username) {
-        boolean removed = playerService.removePlayer(username);
-        if (removed) {
-            return ResponseEntity.ok("Player deleted.");
-        } else {
-            return ResponseEntity.notFound().build();
+    @DeleteMapping(path = "/{id}")
+    public ResponseEntity<String> deletePlayer(@PathVariable Long id) {
+        try {
+            playerService.deletePlayer(id);
+            return ResponseEntity.ok("Player with id " + id + " deleted");
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Player not found");
         }
     }
 }

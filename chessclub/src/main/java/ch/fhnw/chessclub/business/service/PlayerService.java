@@ -2,23 +2,22 @@ package ch.fhnw.chessclub.business.service;
 
 import ch.fhnw.chessclub.data.domain.Player;
 import ch.fhnw.chessclub.data.domain.repository.PlayerRepository;
-// import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
 @Service
 public class PlayerService {
-
-    private final PlayerRepository playerRepository;
-
-    // @Autowired
-    public PlayerService(PlayerRepository playerRepository) {
-        this.playerRepository = playerRepository;
-    }
+    @Autowired
+    private PlayerRepository playerRepository;
 
     // Create
     public Player addPlayer(Player player) {
+        if (playerRepository.existsByUsername(player.getUsername())) {
+            throw new IllegalArgumentException("Username already exists: " + player.getUsername());
+        }
         return playerRepository.save(player);
     }
 
@@ -30,6 +29,11 @@ public class PlayerService {
     // Read by username
     public Player getPlayerByUsername(String username) {
         return playerRepository.findByUsername(username);
+    }
+
+    // Read by id
+    public Player getPlayerById(Long id) {
+        return playerRepository.findById(id).orElse(null);
     }
 
     // Update
@@ -45,11 +49,12 @@ public class PlayerService {
     }
 
     // Delete
-    public boolean removePlayer(String username) {
-        if (playerRepository.existsByUsername(username)) {
-            playerRepository.deleteByUsername(username);
-            return true;
-        }
-        return false;
+    @Transactional
+    public void deletePlayer(Long id) {
+        playerRepository.deleteById(id);
+    }
+
+    public Player savePlayer(Player player) {
+        return playerRepository.save(player);
     }
 }

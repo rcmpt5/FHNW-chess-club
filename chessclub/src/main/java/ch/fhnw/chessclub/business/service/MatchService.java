@@ -73,4 +73,8 @@ public class MatchService {
     public boolean existsById(Long id) {
         return matchRepository.existsById(id);
     }
+
+    public boolean existsByPlayerId(Long playerId) {
+        return matchRepository.existsByPlayer1Id(playerId) || matchRepository.existsByPlayer2Id(playerId);
+    }
 }

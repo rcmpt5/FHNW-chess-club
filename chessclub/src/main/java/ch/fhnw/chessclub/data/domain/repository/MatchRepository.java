@@ -26,4 +26,7 @@ public interface MatchRepository extends JpaRepository<Match, Long> {
 
     // Find all matches where a player participated and the result was a draw
     List<Match> findByResultAndPlayer1OrPlayer2(String result, Player player1, Player player2);
+
+    boolean existsByPlayer1Id(Long playerId);
+    boolean existsByPlayer2Id(Long playerId);
 }
