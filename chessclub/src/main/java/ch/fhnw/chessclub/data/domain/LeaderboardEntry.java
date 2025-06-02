@@ -1,5 +1,6 @@
 package ch.fhnw.chessclub.data.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 @Entity
@@ -21,8 +22,9 @@ public class LeaderboardEntry {
 
     // point at Profile, not Player
     @ManyToOne
-@JoinColumn(name = "player_id", nullable = false)
-private Player player;
+    @JoinColumn(name = "player_id", nullable = false)
+    @JsonIgnore // Add this to prevent recursion
+    private Player player;
 
     // Getters & Setters
     public Long getId() { return id; }
@@ -41,8 +43,8 @@ private Player player;
     public void setPlayer(Player player) { this.player = player; }
 
     @ManyToOne
-@JoinColumn(name = "tournament_id", nullable = false) // or nullable = true if optional
-private Tournament tournament;
+    @JoinColumn(name = "tournament_id", nullable = false) // or nullable = true if optional
+    private Tournament tournament;
 
     public Tournament getTournament() { return tournament; }
     public void setTournament(Tournament tournament) { this.tournament = tournament; }

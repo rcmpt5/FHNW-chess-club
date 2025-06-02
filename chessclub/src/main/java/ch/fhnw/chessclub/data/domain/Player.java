@@ -1,5 +1,6 @@
 package ch.fhnw.chessclub.data.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import java.util.List;
 
@@ -21,7 +22,7 @@ public class Player {
     private int rating;
 
     // JSON ignore maybe needed
-    // Assuming a one-to-many relationship with LeaderboardEntry
+    @JsonIgnore
     @OneToMany(mappedBy = "player",
              cascade = CascadeType.ALL,
              orphanRemoval = true)

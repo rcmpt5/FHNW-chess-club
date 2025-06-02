@@ -8,5 +8,5 @@ import org.springframework.stereotype.Repository;
 public interface PlayerRepository extends JpaRepository<Player, Long> {
     Player findByUsername(String username);
     boolean existsByUsername(String username);
-    void deleteByUsername(String username);
+    void deleteByUsername(String username); // shouldn't be void check pizza example
 }
