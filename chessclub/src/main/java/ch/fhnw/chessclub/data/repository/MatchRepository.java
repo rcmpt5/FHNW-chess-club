@@ -1,4 +1,4 @@
-package ch.fhnw.chessclub.data.domain.repository;
+package ch.fhnw.chessclub.data.repository;
 
 import ch.fhnw.chessclub.data.domain.Match;
 import ch.fhnw.chessclub.data.domain.Player;

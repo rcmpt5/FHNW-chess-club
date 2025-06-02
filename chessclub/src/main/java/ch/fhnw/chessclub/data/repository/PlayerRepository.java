@@ -1,4 +1,4 @@
-package ch.fhnw.chessclub.data.domain.repository;
+package ch.fhnw.chessclub.data.repository;
 
 import ch.fhnw.chessclub.data.domain.Player;
 import org.springframework.data.jpa.repository.JpaRepository;

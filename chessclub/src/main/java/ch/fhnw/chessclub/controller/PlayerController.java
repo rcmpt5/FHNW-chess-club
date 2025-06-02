@@ -2,7 +2,8 @@ package ch.fhnw.chessclub.controller;
 
 import ch.fhnw.chessclub.business.service.PlayerService;
 import ch.fhnw.chessclub.data.domain.Player;
-import ch.fhnw.chessclub.data.domain.dto.CreatePlayerRequest;
+import ch.fhnw.chessclub.data.dto.CreatePlayerRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

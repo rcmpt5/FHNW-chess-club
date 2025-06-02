@@ -1,8 +1,7 @@
 package ch.fhnw.chessclub.business.service;
 
 import ch.fhnw.chessclub.data.domain.Tournament;
-import ch.fhnw.chessclub.data.domain.repository.TournamentRepository;
-// import org.springframework.beans.factory.annotation.Autowired;
+import ch.fhnw.chessclub.data.repository.TournamentRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -12,14 +11,16 @@ import java.util.Optional;
 public class TournamentService {
 
     private final TournamentRepository tournamentRepository;
+    private final LeaderboardService leaderboardService;
 
-    // @Autowired
-    public TournamentService(TournamentRepository tournamentRepository) {
+    public TournamentService(TournamentRepository tournamentRepository, LeaderboardService leaderboardService) {
         this.tournamentRepository = tournamentRepository;
+        this.leaderboardService = leaderboardService;
     }
 
     // CREATE
     public Tournament addTournament(Tournament tournament) {
+        leaderboardService.updateEntriesWithTournamentInfo(tournament);
         return tournamentRepository.save(tournament);
     }
 
@@ -55,7 +56,12 @@ public class TournamentService {
                     existing.setName(updatedTournament.getName());
                     existing.setDate(updatedTournament.getDate());
                     existing.setLocation(updatedTournament.getLocation());
-                    existing.setLeaderboardEntries(updatedTournament.getLeaderboardEntries());
+                    // Clear old entries to avoid mixing with possibly invalid ones
+                    existing.getLeaderboardEntries().clear();
+                    if (updatedTournament.getLeaderboardEntries() != null) {
+                        existing.getLeaderboardEntries().addAll(updatedTournament.getLeaderboardEntries());
+                    }
+                    leaderboardService.updateEntriesWithTournamentInfo(existing);
                     return tournamentRepository.save(existing);
                 })
                 .orElse(null);

@@ -1,28 +1,28 @@
-package ch.fhnw.chessclub.controller;
+// package ch.fhnw.chessclub.controller;
 
-import ch.fhnw.chessclub.business.service.LeaderboardService;
-import ch.fhnw.chessclub.data.domain.LeaderboardEntry;
+// import ch.fhnw.chessclub.business.service.LeaderboardService;
+// import ch.fhnw.chessclub.data.domain.LeaderboardEntry;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+// import org.springframework.beans.factory.annotation.Autowired;
+// import org.springframework.http.ResponseEntity;
+// import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
+// import java.util.List;
 
-@RestController
-@RequestMapping("/leaderboard")
-public class LeaderboardController {
+// @RestController
+// @RequestMapping("/leaderboard")
+// public class LeaderboardController {
 
-    @Autowired
-    private LeaderboardService leaderboardService;
+//     @Autowired
+//     private LeaderboardService leaderboardService;
 
-    @GetMapping
-    public List<LeaderboardEntry> getLeaderboard() {
-        return leaderboardService.getLeaderboard();
-    }
+//     @GetMapping
+//     public List<LeaderboardEntry> getLeaderboard() {
+//         return leaderboardService.getLeaderboard();
+//     }
 
-    @PostMapping
-    public ResponseEntity<LeaderboardEntry> addEntry(@RequestBody LeaderboardEntry entry) {
-        return ResponseEntity.ok(leaderboardService.addEntry(entry));
-    }
-}
+//     @PostMapping
+//     public ResponseEntity<LeaderboardEntry> addEntry(@RequestBody LeaderboardEntry entry) {
+//         return ResponseEntity.ok(leaderboardService.addEntry(entry));
+//     }
+// }

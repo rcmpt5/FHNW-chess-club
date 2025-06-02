@@ -2,8 +2,9 @@ package ch.fhnw.chessclub.business.service;
 
 import ch.fhnw.chessclub.data.domain.Match;
 import ch.fhnw.chessclub.data.domain.Player;
-import ch.fhnw.chessclub.data.domain.repository.MatchRepository;
-import ch.fhnw.chessclub.data.domain.repository.PlayerRepository;
+import ch.fhnw.chessclub.data.repository.MatchRepository;
+import ch.fhnw.chessclub.data.repository.PlayerRepository;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

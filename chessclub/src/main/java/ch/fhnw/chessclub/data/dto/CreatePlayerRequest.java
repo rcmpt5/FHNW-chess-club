@@ -1,4 +1,4 @@
-package ch.fhnw.chessclub.data.domain.dto;
+package ch.fhnw.chessclub.data.dto;
 
 public class CreatePlayerRequest {
     private String username;
