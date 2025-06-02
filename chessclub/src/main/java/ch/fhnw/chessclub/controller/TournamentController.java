@@ -36,24 +36,6 @@ public class TournamentController {
                 .orElse(ResponseEntity.notFound().build());
     }
 
-    // READ BY NAME
-    @GetMapping("/by-name/{name}")
-    public List<Tournament> getTournamentsByName(@PathVariable String name) {
-        return tournamentService.getTournamentsByName(name);
-    }
-
-    // READ BY LOCATION
-    @GetMapping("/by-location/{location}")
-    public List<Tournament> getTournamentsByLocation(@PathVariable String location) {
-        return tournamentService.getTournamentsByLocation(location);
-    }
-
-    // READ BY DATE
-    @GetMapping("/by-date/{date}")
-    public List<Tournament> getTournamentsByDate(@PathVariable String date) {
-        return tournamentService.getTournamentsByDate(date);
-    }
-
     // UPDATE
     @PutMapping("/{id}")
     public ResponseEntity<Tournament> updateTournament(@PathVariable Long id, @RequestBody Tournament tournament) {
@@ -64,7 +46,11 @@ public class TournamentController {
     // DELETE
     @DeleteMapping("/{id}")
     public ResponseEntity<String> deleteTournament(@PathVariable Long id) {
-        tournamentService.deleteTournament(id);
-        return ResponseEntity.ok("Tournament deleted.");
+        try {
+            tournamentService.deleteTournament(id);
+            return ResponseEntity.ok("Tournament deleted.");
+        } catch (Exception e) {
+            return ResponseEntity.status(404).body("Tournament not found");
+        }
     }
 }

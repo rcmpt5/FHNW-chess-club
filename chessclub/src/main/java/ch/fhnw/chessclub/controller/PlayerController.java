@@ -77,4 +77,16 @@ public class PlayerController {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Player not found");
         }
     }
+
+    @DeleteMapping(path = "/by-username/{username}")
+    public ResponseEntity<String> deletePlayerByUsername(@PathVariable String username) {
+        try {
+            playerService.deletePlayerByUsername(username);
+            return ResponseEntity.ok("Player with username " + username + " deleted");
+        } catch (IllegalStateException e) {
+            return ResponseEntity.status(HttpStatus.CONFLICT).body(e.getMessage());
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Player not found");
+        }
+    }
 }

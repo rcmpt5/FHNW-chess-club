@@ -3,6 +3,8 @@ package ch.fhnw.chessclub.business.service;
 import ch.fhnw.chessclub.data.domain.Match;
 import ch.fhnw.chessclub.data.domain.Player;
 import ch.fhnw.chessclub.data.domain.repository.MatchRepository;
+import ch.fhnw.chessclub.data.domain.repository.PlayerRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -12,6 +14,9 @@ import java.util.Optional;
 public class MatchService {
 
     private final MatchRepository matchRepository;
+
+    @Autowired
+    private PlayerRepository playerRepository;
 
     public MatchService(MatchRepository matchRepository) {
         this.matchRepository = matchRepository;
@@ -54,14 +59,17 @@ public class MatchService {
 
     // UPDATE
     public Match updateMatch(Long id, Match updatedMatch) {
-        return matchRepository.findById(id)
-                .map(existingMatch -> {
-                    existingMatch.setResult(updatedMatch.getResult());
-                    existingMatch.setPlayer1(updatedMatch.getPlayer1());
-                    existingMatch.setPlayer2(updatedMatch.getPlayer2());
-                    return matchRepository.save(existingMatch);
-                })
-                .orElse(null);
+        return matchRepository.findById(id).map(existingMatch -> {
+            Player player1 = playerRepository.findById(updatedMatch.getPlayer1().getId()).orElse(null);
+            Player player2 = playerRepository.findById(updatedMatch.getPlayer2().getId()).orElse(null);
+            if (player1 == null || player2 == null) {
+                throw new IllegalArgumentException("One or both players do not exist.");
+            }
+            existingMatch.setPlayer1(player1);
+            existingMatch.setPlayer2(player2);
+            existingMatch.setResult(updatedMatch.getResult());
+            return matchRepository.save(existingMatch);
+        }).orElse(null);
     }
 
     // DELETE
