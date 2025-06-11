@@ -7,7 +7,9 @@
 /workspaces/FHNW-chess-club/chessclub/src/main/java/ch/fhnw/chessclub/business/service/ProfileService.java
 /workspaces/FHNW-chess-club/chessclub/src/main/java/ch/fhnw/chessclub/business/service/RegistrationService.java
 /workspaces/FHNW-chess-club/chessclub/src/main/java/ch/fhnw/chessclub/business/service/TournamentService.java
+/workspaces/FHNW-chess-club/chessclub/src/main/java/ch/fhnw/chessclub/config/CorsConfig.java
 /workspaces/FHNW-chess-club/chessclub/src/main/java/ch/fhnw/chessclub/config/DataInitializer.java
+/workspaces/FHNW-chess-club/chessclub/src/main/java/ch/fhnw/chessclub/config/OpenApiConfig.java
 /workspaces/FHNW-chess-club/chessclub/src/main/java/ch/fhnw/chessclub/controller/HomeController.java
 /workspaces/FHNW-chess-club/chessclub/src/main/java/ch/fhnw/chessclub/controller/LeaderboardController.java
 /workspaces/FHNW-chess-club/chessclub/src/main/java/ch/fhnw/chessclub/controller/LoginController.java
@@ -28,9 +30,10 @@
 /workspaces/FHNW-chess-club/chessclub/src/main/java/ch/fhnw/chessclub/data/domain/Role.java
 /workspaces/FHNW-chess-club/chessclub/src/main/java/ch/fhnw/chessclub/data/domain/Tournament.java
 /workspaces/FHNW-chess-club/chessclub/src/main/java/ch/fhnw/chessclub/data/domain/UserCredentials.java
-/workspaces/FHNW-chess-club/chessclub/src/main/java/ch/fhnw/chessclub/data/domain/repository/MatchRepository.java
-/workspaces/FHNW-chess-club/chessclub/src/main/java/ch/fhnw/chessclub/data/domain/repository/PlayerRepository.java
-/workspaces/FHNW-chess-club/chessclub/src/main/java/ch/fhnw/chessclub/data/domain/repository/TournamentRepository.java
-/workspaces/FHNW-chess-club/chessclub/src/main/java/ch/fhnw/securitytest/controller/AuthController.java
-/workspaces/FHNW-chess-club/chessclub/src/main/java/ch/fhnw/securitytest/security/SecurityConfig.java
-/workspaces/FHNW-chess-club/chessclub/src/main/java/ch/fhnw/securitytest/security/TokenService.java
+/workspaces/FHNW-chess-club/chessclub/src/main/java/ch/fhnw/chessclub/data/dto/CreatePlayerRequest.java
+/workspaces/FHNW-chess-club/chessclub/src/main/java/ch/fhnw/chessclub/data/repository/MatchRepository.java
+/workspaces/FHNW-chess-club/chessclub/src/main/java/ch/fhnw/chessclub/data/repository/PlayerRepository.java
+/workspaces/FHNW-chess-club/chessclub/src/main/java/ch/fhnw/chessclub/data/repository/TournamentRepository.java
+/workspaces/FHNW-chess-club/chessclub/src/main/java/ch/fhnw/chessclub/security/AuthController.java
+/workspaces/FHNW-chess-club/chessclub/src/main/java/ch/fhnw/chessclub/security/SecurityConfig.java
+/workspaces/FHNW-chess-club/chessclub/src/main/java/ch/fhnw/chessclub/security/TokenService.java

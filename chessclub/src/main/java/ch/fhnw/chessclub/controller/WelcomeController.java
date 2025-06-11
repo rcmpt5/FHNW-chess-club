@@ -1,14 +1,14 @@
 package ch.fhnw.chessclub.controller;
 
-// import org.springframework.security.core.Authentication;
-// import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-// import io.swagger.v3.oas.annotations.Hidden;
+import io.swagger.v3.oas.annotations.Hidden;
 
 @RestController
-// @Hidden // Hide this controller from the Swagger UI
+@Hidden // Hide this controller from the Swagger UI
 public class WelcomeController {
 
     @GetMapping(value="/")
@@ -17,11 +17,11 @@ public class WelcomeController {
         return "Hello, welcome to the official FHNW Chess Club page!";
     }
 
-//     @GetMapping(value="/user")
-//     public String getUserRole(Authentication auth) {
-//         UserDetails userDetails = (UserDetails) auth.getPrincipal();
-//         String role = userDetails.getAuthorities().toArray()[1].toString();
-//         return role;
-//     }
+    @GetMapping(value="/user")
+    public String getUserRole(Authentication auth) {
+         UserDetails userDetails = (UserDetails) auth.getPrincipal();
+         String role = userDetails.getAuthorities().toArray()[1].toString();
+         return role;
+}
 
 }
