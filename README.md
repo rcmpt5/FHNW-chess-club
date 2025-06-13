@@ -118,9 +118,9 @@ Method: GET <br>
 
 ## Contributors
 
-Daria Kunz
-Elias Béboux
-Haris Rastoder
+Daria Kunz,
+Elias Béboux,
+Haris Rastoder,
 Roberto Campestrin
 
 
