@@ -122,10 +122,11 @@ Default: overall <br>
 Method: GET <br>
 
 
-## Implementation
+## Contributors
 
-
-
-
+Daria Kunz
+Elias Béboux
+Haris Rastoder
+Roberto Campestrin
 
 
