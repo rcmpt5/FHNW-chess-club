@@ -9,13 +9,7 @@
   - [Prototype Design](#prototype-design)
   - [Domain Design](#domain-design)
   - [Business Logic](#business-logic)
-- [Implementation](#implementation)
-  - [Backend Technology](#backend-technology)
-  - [Frontend Technology](#frontend-technology)
-- [Project Management](#project-management)
-  - [Roles](#roles)
-  - [Milestones](#milestones)
-
+- [Contributors](#contributors)
 
 ## Analysis
 
